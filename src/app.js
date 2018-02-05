@@ -6,7 +6,11 @@ const routes = require('./routes/routes')
 
 const app = express()
 
-mongoose.connect('mongodb://localhost:27017/chega-junto')
+const MONGO_URL = 'mongodb://localhost:27017/chega-junto'
+
+app.set('MONGO_URL', process.env.MONGO_URL || MONGO_URL)
+
+mongoose.connect(app.get('MONGO_URL'))
 
 app.set('port', (process.env.PORT || 3000))
 
