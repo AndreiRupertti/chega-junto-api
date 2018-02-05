@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const routes = require('./routes/routes')
+const Org = require('./models/Organization')
 
 const app = express()
 
@@ -18,7 +19,9 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.send('Everything seems to be working!')
+  Org.find()
+    .then(response => res.send(`Everything seems to be working! ${response}`))
+    .catch(e => console.log(e))
 })
 
 app.get('/findOrgs', routes.findOrgs)
