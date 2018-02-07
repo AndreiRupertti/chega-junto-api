@@ -19,9 +19,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  Org.find()
-    .then(response => res.send(`Everything seems to be working! ${response}`))
-    .catch(e => console.log(e))
+  res.send(`Everything seems to be working!`))
 })
 
 app.get('/findOrgs', routes.findOrgs)
