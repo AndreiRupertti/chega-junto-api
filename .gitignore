@@ -62,3 +62,6 @@ test/e2e/reports/
 reports/
 reports/test/e2e
 selenium-debug.log/
+
+#node_modules
+./node_modules/
