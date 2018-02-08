@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/app.js --exec 'npm run lint && node'",
-    "test": "mocha --recursive --watch",
-    "lint": "./node_modules/.bin/eslint **/*.js --quiet"
+    "start": "nodemon ./src/app.js --exec 'npm run lint && npm run test && node'",
+    "test": "mocha --recursive",
+    "watch": "mocha --recursive --watch",
+    "lint": "./node_modules/.bin/eslint **/*.js --quiet",
+    "populate": "mongo './scripts/mongoScript.js'"
   },
   "author": "",
   "license": "ISC",
