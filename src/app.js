@@ -25,9 +25,7 @@ app.get('/findOrgs', routes.findOrgs)
 
 app.post('/findEventById/:id', routes.findEventById)
 
-app.post('/insertItem', (req, res) => {
-
-})
+app.post('/insertOrg', routes.insertOrg)
 
 app.listen(app.get('port'), () =>
   console.log(`Node app is running on port ${app.get('port')}`))
