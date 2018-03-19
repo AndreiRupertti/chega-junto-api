@@ -4,7 +4,7 @@ const insertOrg = require('./insertOrg')
 const insertUser = require('./insertUser')
 const validation = require('./validation')
 const Organization = require('../models/Organization')
-const Organization = require('../models/Person')
+const Person = require('../models/Person')
 
 const allRoutes = {
   findOrgs: findAllRoute(Organization),
