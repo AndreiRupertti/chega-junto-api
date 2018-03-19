@@ -21,11 +21,15 @@ app.get('/', (req, res) => {
   res.send(`Everything seems to be working!`)
 })
 
+app.post('/validation', routes.validation)
+
 app.get('/findOrgs', routes.findOrgs)
 
 app.post('/findEventById/:id', routes.findEventById)
 
 app.post('/insertOrg', routes.insertOrg)
+
+app.post('/insertUser', routes.insertUser)
 
 app.listen(app.get('port'), () =>
   console.log(`Node app is running on port ${app.get('port')}`))
